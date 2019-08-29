@@ -1978,9 +1978,11 @@ input, select, textarea {
 /* Item */
 
 	.item {
-		box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
-		margin-bottom: 40px;
+		/* box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05); */
+	   margin-bottom: 40px;
 	}
+
+
 
 		.item header {
 			background: #fff;
@@ -2627,9 +2629,7 @@ input, select, textarea {
 				#footer .copyright li:first-child {
 					margin-top: 0;
 				}
-				.logo{
-				    width: 100%;
-					}
+
 
 	}
 
@@ -2646,3 +2646,17 @@ input, select, textarea {
     background: white;
     padding: 1%;
 }
+
+@media screen and (max-width: 800px) {
+	.logo{width: 100% !important; }
+});
+
+.item.animated{
+	opacity: 0;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+/* Joey Aug 29 */
+.item.animated:hover{
+   border: 2px dashed #00f;
+}
+#about-img, #about-txt{opacity: 0;}

@@ -124,4 +124,30 @@
   //Portfolio
 	//trigger the animation - open modal window
 
+	// hide our element on page load
+ // $('#first').css('opacity', 0);
+ //set a waypoint for all the page parts on the page
+	 var ppWaypoint = $('.item.animated').waypoint(function(direction) {
+			 //check the direction
+			 if(direction == 'down') {
+					 //add the class to start the animation
+					 $(this.element).addClass('fadeInUp');
+					 //then destroy this waypoint, we don't need it anymore
+					 this.destroy();
+			 }
+	 }, {
+			 //Set the offset
+			 offset: '80%'
+	 });
+
+	 $('#about-img').waypoint(function() {
+ 			   $('#about-img').addClass('fadeInLeft');
+				  this.destroy();
+ 	 }, { offset: '30%' });
+
+	 $('#about-txt').waypoint(function() {
+					$('#about-txt').addClass('fadeInRight');
+				 this.destroy();
+		}, { offset: '30%' });
+
 })(jQuery);

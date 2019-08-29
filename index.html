@@ -4,6 +4,7 @@
 		<title>Welcome to AppsLabz Solutions</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/animate.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
@@ -82,13 +83,13 @@
 
 							<div class="row">
 								<div class="col-4 col-12-mobile">
-									<article class="item">
+									<article id="0" class="item animated">
                     <a href="portfolio1.html" class="image fit"><img src="images/amazon-cart.png" alt="Allow Shopify carts on Amazon" /></a>
 										<header>
 											<h3><a href="portfolio1.html">Shopify Carts on Amazon</a></h3>
 										</header>
 									</article>
-									<article class="item">
+									<article id="1" class="item animated">
 										<a href="portfolio2.html" class="image fit"><img src="images/auto-order-notes-2.png" alt="" /></a>
 										<header>
 											<h3><a href="portfolio2.html">Auto Order Notes</a></h3>
@@ -97,13 +98,13 @@
 								</div>
 
 								<div class="col-4 col-12-mobile">
-									<article class="item">
+									<article id="2" class="item animated">
 										<a href="portfolio3.html" class="image fit"><img src="images/geolocation-redirect.png" alt="Geolocation Redirect" /></a>
 										<header>
 											<h3><a href="portfolio3.html">Geolocation Redirect</a></h3>
 										</header>
 									</article>
-									<article class="item">
+									<article id="3" class="item animated">
 										<a href="portfolio4.html" class="image fit"><img src="images/instant-download.png" alt="Instant Download" /></a>
 										<header>
 											<h3><a href="portfolio4.html">Instant Download</a></h3>
@@ -111,14 +112,14 @@
 									</article>
 								</div>
 
-								<div class="col-4 col-12-mobile">
-									<article class="item">
+								<div id="4" class="col-4 col-12-mobile">
+									<article class="item animated">
 										<a href="portfolio5.html" class="image fit"><img src="images/gratuity.png" alt="Gratuity or Tips" /></a>
 										<header>
 											<h3><a href="portfolio5.html">Gratuity or Tips</a></h3>
 										</header>
 									</article>
-									<article class="item">
+									<article id="5" class="item animated">
 										<a href="portfolio6.html" class="image fit"><img src="images/sold-by-the-box.png" alt="Tileinspired sold by the box" /></a>
 										<header>
 											<h3><a href="portfolio6.html">Sold by the box</a></h3>
@@ -138,10 +139,10 @@
 								<h2>About Me</h2>
 							</header>
             <div class="row">
-						 	<div class="col-6 col-12-mobile">
+						 	<div id="about-img" class="col-6 col-12-mobile animated">
 								<a href="#" class="image featured"><img src="images/joey-olaopa.jpg" alt="joey-olaopa-picture" /></a>
 	            </div>
-							<div class="col-6 col-12-mobile">
+							<div id="about-txt" class="col-6 col-12-mobile animated">
 								<p>Hello! I'm Joey Olaopa, a Fullstack Web Solutions Engineer focused on developing custom business logic components, Shopify scripts, custom theme extension tweaks and private apps that help to improve and extend your standard Shopify functionality. I love to travel and learn about new cultures. Professionally, I pride myself in providing only, top quality, e-commerce solutions that help my clients get more out of the Shopify platform.</p>
 	            </div>
 						</div>
@@ -209,6 +210,7 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.waypoints.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
