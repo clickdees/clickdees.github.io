@@ -143,11 +143,11 @@
 	 $('#about-img').waypoint(function() {
  			   $('#about-img').addClass('fadeInLeft');
 				  this.destroy();
- 	 }, { offset: '30%' });
+ 	 }, { offset: '60%' });
 
 	 $('#about-txt').waypoint(function() {
 					$('#about-txt').addClass('fadeInRight');
 				 this.destroy();
-		}, { offset: '30%' });
+		}, { offset: '60%' });
 
 })(jQuery);
