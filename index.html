@@ -1,222 +1,551 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Welcome to AppsLabz Solutions</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/animate.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<html><head>
+  <title>Joey Builds - Resume</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap');
 
-		<!-- Header -->
-			<div id="header">
+    :root {
+        --bg-color: #f0f0f0;
+        --text-color: #1a1a1a;
+        --accent-color: #6200ea;
+        --secondary-color: #03dac6;
+        --link-color: #0000EE;
+        --link-visited-color: #ff04d9;
+        --border-color: #e0e0e0;
+        --card-bg-color: #ffffff;
+        --menu-bg-color: rgba(240, 240, 240, 0.9);
+    }
 
-				<div class="top">
+    .dark-mode {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --accent-color: #bb86fc;
+        --secondary-color: #03dac6;
+        --link-color: #bb86fc;
+        --link-visited-color: #03dac6;
+        --border-color: #333333;
+        --card-bg-color: #1e1e1e;
+        --menu-bg-color: rgba(18, 18, 18, 0.9);
+    }
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/joey-portrait.jpg" alt="joey-olaopa-portrait" /></span>
-							<h1 id="title">Joseph Olaopa</h1>
-							<p>Software Engineer</p>
-						</div>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Welcome</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
+    html {
+        scroll-behavior: smooth;
+    }
 
-				</div>
+    body {
+        font-family: 'Fira Code', monospace;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        transition: all 0.3s ease;
+        padding: 20px;
+        padding-top: 100px; /* Added to account for sticky header */
+        font-size: 16px;
+    }
 
-				<div class="bottom">
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 5%;
+    }
 
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/joseph-olaopa-16177692/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/clickdees" class="icon brands fa-github"><span class="label">Github</span></a></li>
-					  	<li><a href="mailto://support@theappslabz.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
+    header {
+        background-color: var(--menu-bg-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
 
-				</div>
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: var(--accent-color);
+    }
 
-			</div>
+    nav {
+        margin-top: 20px;
+    }
 
-		<!-- Main -->
-			<div id="main">
+    nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
+    nav ul li {
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
 
-							<header>
-								<h1><div class="logo"><img src="images/appslabzlogo.png" alt="" /></div></h1>
-								<h2 class="alt">Welcome to <strong>AppsLabz Solutions</strong>, Shopify consulting.</h2>
-							  <p>Hi, I’m Joseph Olaopa. I’m the founder, developer, marketer, cook and everything else for AppsLabz Solutions.</p>
-							</header>
+    nav ul li a {
+        color: var(--link-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
 
-							<footer>
-								<a href="#portfolio" class="button scrolly">Learn More</a>
-							</footer>
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
 
-						</div>
-					</section>
+    
+  .section { margin-bottom: 40px;scroll-margin-top: 250px;}
 
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 10px;
+    }
 
-							<header>
-								<h2>Portfolio</h2>
-							</header>
+    ol, ul {
+        list-style-type: decimal;
+        padding-left: 30px;
+    }
 
-							<p>I have completed over <strong>400 projects</strong> on the Shopify platform in over 4 - 5 years.</p>
-								
-								<a target="_blank" href="https://www.storetasker.com/expert/joey-olaopa">Here are some reviews from my clients</a>
+    li {
+        margin-bottom: 20px;
+    }
 
+    a {
+        color: var(--link-color);
+        text-decoration: none;
+    }
 
-							<p>Listed below are a select few case studies from some recently completed Shopify projects.</p>
+    a:visited {
+        color: var(--link-visited-color);
+    }
 
-							<div class="row">
-								<div class="col-4 col-12-mobile">
-									<article id="0" class="item animated">
-                    <a href="portfolio1.html" class="image fit"><img src="images/amazon-cart.png" alt="Allow Shopify carts on Amazon" /></a>
-										<header>
-											<h3><a href="portfolio1.html">Shopify Carts on Amazon</a></h3>
-										</header>
-									</article>
-									<article id="1" class="item animated">
-										<a href="portfolio2.html" class="image fit"><img src="images/auto-order-notes-2.png" alt="" /></a>
-										<header>
-											<h3><a href="portfolio2.html">Auto Order Notes</a></h3>
-										</header>
-									</article>
-								</div>
+    a:hover {
+        text-decoration: underline;
+    }
 
-								<div class="col-4 col-12-mobile">
-									<article id="2" class="item animated">
-										<a href="portfolio3.html" class="image fit"><img src="images/geolocation-redirect.png" alt="Geolocation Redirect" /></a>
-										<header>
-											<h3><a href="portfolio3.html">Geolocation Redirect</a></h3>
-										</header>
-									</article>
-									<article id="3" class="item animated">
-										<a href="portfolio4.html" class="image fit"><img src="images/instant-download.png" alt="Instant Download" /></a>
-										<header>
-											<h3><a href="portfolio4.html">Instant Download</a></h3>
-										</header>
-									</article>
-								</div>
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 
-								<div id="4" class="col-4 col-12-mobile">
-									<article class="item animated">
-										<a href="portfolio5.html" class="image fit"><img src="images/gratuity.png" alt="Gratuity or Tips" /></a>
-										<header>
-											<h3><a href="portfolio5.html">Gratuity or Tips</a></h3>
-										</header>
-									</article>
-									<article id="5" class="item animated">
-										<a href="portfolio6.html" class="image fit"><img src="images/sold-by-the-box.png" alt="Tileinspired sold by the box" /></a>
-										<header>
-											<h3><a href="portfolio6.html">Sold by the box</a></h3>
-										</header>
-									</article>
-								</div>
-							</div>
+    .skill-tag {
+        background-color: var(--secondary-color);
+        color: var(--bg-color);
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8em;
+    }
 
-						</div>
-					</section>
+    footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+        font-size: 0.9em;
+    }
 
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
+    .dark-mode-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+    }
 
-							<header>
-								<h2>About Me</h2>
-							</header>
-            <div class="row">
-						 	<div id="about-img" class="col-6 col-12-mobile animated">
-								<a href="#" class="image featured"><img src="images/joey-olaopa.jpg" alt="joey-olaopa-picture" /></a>
-	            </div>
-							<div id="about-txt" class="col-6 col-12-mobile animated">
-								<p>Hello! I'm Joey Olaopa, a Fullstack Web Solutions Engineer focused on developing custom business logic components, Shopify scripts, custom theme extension tweaks and private apps that help to improve and extend your standard Shopify functionality. I love to travel and learn about new cultures. Professionally, I pride myself in providing only, top quality, e-commerce solutions that help my clients get more out of the Shopify platform.</p>
-	            </div>
-						</div>
-					</div>
-					</section>
+    .dark-mode-toggle input {
+        display: none;
+    }
 
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
+    .dark-mode-toggle label {
+        cursor: pointer;
+        padding: 10px;
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        border-radius: 50%;
+        color: var(--text-color);
+        transition: all 0.3s ease;
+    }
 
-							<header>
-								<h2>Contact</h2>
-							</header>
+    .dark-mode-toggle label:hover {
+        background-color: var(--accent-color);
+        color: #ffffff;
+    }
 
-							<p>I am available on any of the platforms listed below.</p>
+    .testimonial-card {
+        background-color: var(--card-bg-color);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
 
-							<div class="row">
-									<div class="col-4 col-12-mobile">
-										<article class="item">
-											<a href="https://www.linkedin.com/in/joseph-olaopa-16177692/" class="icon brands fa-linkedin  contact-icon"><span class="label">Linkedin</span></a>
-											<header>
-												<h3><a href="https://www.linkedin.com/in/joseph-olaopa-16177692/">Linkedin</a></h3>
-											</header>
-										</article>
+    .testimonial-content {
+        font-style: italic;
+        margin-bottom: 15px;
+    }
 
-									</div>
+    .testimonial-author {
+        text-align: right;
+        font-weight: bold;
+    }
 
-									<div class="col-4 col-12-mobile">
-										<article class="item">
-											<a href="https://github.com/clickdees" class="icon brands fa-github contact-icon"><span class="label">Github</span></a>
-											<header>
-												<h3><a href="https://github.com/clickdees">Github</a></h3>
-											</header>
-										</article>
+    .case-studies {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 
-									</div>
-									<div class="col-4 col-12-mobile">
-										<article class="item">
-											<a href="mailto://support@theappslabz.com" class="icon solid fa-envelope  contact-icon"><span class="label">Email</span></a>
-											<header>
-												<h3><a href="mailto://support@theappslabz.com">support@theappslabz.com</a></h3>
-											</header>
-										</article>
+    .case-study-card {
+        background-color: var(--card-bg-color);
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+    }
 
-									</div>
-								</div>
+    .case-study-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
 
-						</div>
-					</section>
+    .case-study-image {
+        width: 50%;
+        overflow: hidden;
+    }
 
+    .case-study-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
+    .case-study-content {
+        width: 50%;
+        padding: 20px;
+    }
 
-			</div>
+    .case-study-content h3 {
+        color: var(--accent-color);
+        margin-bottom: 10px;
+    }
 
-		<!-- Footer -->
-			<div id="footer">
+    .case-study-content p {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
 
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; 2019. All rights reserved. AppsLabz Solutions</li>
-					</ul>
+    .case-study-content ul {
+        font-size: 0.9em;
+        padding-left: 20px;
+        margin-bottom: 15px;
+    }
 
-			</div>
+    .download-btn {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.waypoints.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    .download-btn:hover {
+            background-color: #18a90b;
+            text-decoration: none;
+    }
 
-	</body>
-</html>
+   .download-section {
+        text-align: center;
+        margin: 0 0 2%;
+    }
+
+ 
+
+ #about{margin-top: 150px;}
+
+ #about > p{margin-bottom: 2%;} 
+
+.hidden{display: none;}
+
+@media (max-width: 768px) {
+        nav ul { display: block; text-align: center; }
+        nav ul li {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .case-study-card {
+            flex-direction: column;
+        }
+
+        .case-study-image, .case-study-content {
+            width: 100%;
+        }
+
+        .case-study-image {
+            height: 200px;
+        }
+        nav ul li a{font-size: 1.5rem;}
+   } 
+</style>
+</head>
+<body>
+    <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle">
+        <label for="darkModeToggle">🌓</label>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="bigtop">
+                <h1 style="text-align: center;">Joseph Olaopa</h1>
+                <div id="download" class="download-section">
+                    <a id="downloadPdf" href="joey-resume.pdf" class="download-btn" download="joey-resume.pdf">Download PDF</a>
+                </div>
+                <p style="text-align: center;">Full-Stack Developer | Anime Enthusiast | Code Wizard</p>
+               
+            </div>
+            <nav>
+                <ul >
+                    <li><a href="#about">About</a></li>
+                    <!-- <li><a href="#case-studies">Case Studies</a></li> -->
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <!-- <li><a href="#testimonials">Testimonials</a></li> -->
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container resume">
+        
+        <section id="about" class="section">
+            <h2>Summary</h2>
+            <p>Hello! I'm the Joey, a passionate full-stack developer with a love for all things anime and tech. When I'm not binge-watching the latest seasonal anime, you can find me crafting elegant code solutions and building innovative projects that adds value to the clients business.</p>
+            <p>As a seasoned full stack web solutions application developer/engineer, I specialize in crafting innovative front-end functionalities and robust Shopify solutions. My expertise spans the spectrum of web development, from custom theme design and Shopify app development to implementing intricate Shopify Plus scripts.</p>
+            <p>My technical skill set includes proficiency in HTML5, CSS3 (including Tailwind CSS and Bootstrap), Liquid (Shopify's templating language), and JavaScript (including frameworks like jQuery, React.js, and Vue.js). Additionally, I am well-versed in backend technologies such as Ruby (on Rails and Sinatra), Node.js (with Express.js), and MongoDB. I have a strong grasp of APIs and GraphQL, enabling me to integrate diverse systems seamlessly.</p>
+            <p>I thrive on creating user-centric, scalable solutions that drive business growth and enhance online experiences. With a keen eye for design and a passion for leveraging cutting-edge technologies, I am committed to delivering high-quality, custom-tailored web solutions that exceed client expectations.</p>
+         </section>
+
+        <section id="projects" class="section">
+            <h2>Portfolio</h2>
+            <ol>
+                <li>
+                    <strong><a target="_blank" href="https://jfolio.myshopify.com">Portfolio</a></strong> - Best way to show I can build on <strong>Shopify</strong> is a portfolio built on Shopify were you can see live demos of previous projects. 
+                    <br>
+                    <em>Tech stack: Shopify, Liquid, JS, CSS, HTML</em>
+                    <br>
+                    <a target="_blank" href="https://jfolio.myshopify.com">Store Password = PEEK</a>
+                </li>
+            </ol>
+        </section>
+
+  
+      
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Linux</span>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <ul>
+                <li>
+                    <strong>Shopify Developer</strong> - AppsLabz Solutions, Lagos, Nigeria (May 2012 - Present)
+                    <br>
+                    Develop and customize Shopify themes and apps.<br>
+                    Implement and manage Shopify Plus scripts using Ruby.<br>
+                    Enhance user experience with advanced HTML, CSS, JavaScript, and Liquid code.
+                </li>
+                <li>
+                    <strong>Shopify Developer</strong> - Storetasker, Remote (November 2016 - 2022)
+                    <br>
+                    Develop and customize Shopify themes and apps.<br>
+                    Implement and manage Shopify Plus scripts using Ruby.<br>
+                    Enhance user experience with advanced HTML, CSS, JavaScript, and Liquid code.
+                </li>
+                <li>
+                    <strong>Independent Software Consultant</strong> - Multrateq Solutions (November 2014 - 2018)
+                    <br>
+                    Worked closely with Multrateq Solutions on web and mobile application projects.<br>
+                    Contributed to projects like TopScore, a mobile application that uses gamification to help students prepare for major academic and professional exams.
+                </li>
+                <li>
+                    <strong>Lead Web Engineer</strong> - ATIB College for Further Education (November 2010 - 2017)
+                    <br>
+                    Head of Web Development and Developer of the ATIB College for Further Education Distance Learning e-Campus Portal.<br>
+                    Built the e-campus portal and other e-learning extensions.
+                </li>
+            </ul>
+        </section>
+        
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>B.Sc. in Computer Science</strong> - Lagos State University (2013)
+                    <br>
+                    Grade: Second Class Upper Division
+                </li>
+                <li>
+                    <strong>Professional Graduate Diploma in Information Technology</strong> - BCS, The Chartered Institute for IT (2011 - 2012)
+                    <br>
+                    Activities and Societies: The Certificate in IT is recognized by Ofqual as a level 6 qualification and is the academic equivalent to year 3 of a university honors degree in England.
+                </li>
+                <li>
+                    <strong>Diploma in Information Technology</strong> - BCS, The Chartered Institute for IT (2010 - 2011)
+                    <br>
+                    Activities and Societies: The Certificate in IT is recognized by Ofqual as a level 5 qualification and is the academic equivalent to year 2 of a university honors degree in England.
+                </li>
+                <li>
+                    <strong>Certificate in Information Technology</strong> - BCS, The Chartered Institute for IT (2009 - 2010)
+                    <br>
+                    Activities and Societies: The Certificate in IT is recognized by Ofqual as a level 4 qualification and is the academic equivalent to year 1 of a university honors degree in England.
+                </li>
+                <li>
+                    <strong>Honours Diploma in Network Engineering, Computer Systems Networking and Telecommunications</strong> - National Institute of Information Technology (2007 - 2008)
+                    <br>
+                    Grade: Excellent, Graduated with honors
+                </li>
+                <li>
+                    <strong>Certificate in Network Engineering, Computer Systems Networking and Telecommunications</strong> - National Institute of Information Technology (2006 - 2007)
+                    <br>
+                    Grade: Excellent
+                </li>
+            </ul>
+        </section>
+        
+
+        <!-- <section id="testimonials" class="section">
+            <h2>Testimonials</h2>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"The Joey is a true otaku savant. Their ability to blend deep technical knowledge with a profound understanding of anime culture results in truly unique and captivating projects."</p>
+                </div>
+                <div class="testimonial-author">
+                    <p>- Senpai Developer, AniTech Solutions</p>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Working with the Joey was an enlightening experience. Their passion for both coding and anime shines through in every line of code they write."</p>
+                </div>
+                <div class="testimonial-author">
+                    <p>- Kawaii Project Manager, WaifuWorks Inc.</p>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"The Joey's innovative approach to solving complex problems is truly inspiring. They have a unique ability to transform otaku dreams into digital reality."</p>
+                </div>
+                <div class="testimonial-author">
+                    <p>- Tsundere CTO, OtakuSoft</p>
+                </div>
+            </div>
+        </section> -->
+
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Feel free to reach out for collaborations or just to chat about anime and coding!</p>
+            <p>Email: <a href="mailto:joey.olaopa@gmail.com">joey.olaopa@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/clickdees">github.com/clickdees</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/joseph-olaopa-16177692/">https://www.linkedin.com/in/joseph-olaopa-16177692/</a></p>
+            
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Joey. All rights reserved.</p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+
+        // Dark mode toggle functionality
+        darkModeToggle.addEventListener('change', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', null);
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky Nav
+        const nav = document.querySelector('nav');
+        const sticky = nav.offsetTop;
+        const bigTop = document.querySelector('.bigtop');
+        console.log("stickyoffsettop", sticky);
+
+        function stickyNav() {
+            if (window.pageYOffset > sticky) {
+                bigTop.classList.add('hidden');
+                nav.classList.add('sticky');
+            } else {
+                bigTop.classList.remove('hidden');
+                nav.classList.remove('sticky');
+            }
+        }
+
+        window.onscroll = function() {
+            stickyNav();
+        };
+    });
+    </script>
+ 
+    
+    
+</body></html>
